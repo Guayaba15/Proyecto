@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #FFFFFF;
+      color: #fff;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      margin-left: -37rem;
+      color: #000000;
+    }
+   
+
+    nav {
+      display: flex;
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    header img {
+        width: 50px;
+        margin-left: 2.5%;
+    }
+    .primera{
+        padding: 70px;
+        display: flex;
+        align-items: center;
+        background-color: #D9D9D9;
+        margin-bottom: 30px;
+      }
+  
+      .primera img {
+        max-width: 100%;
+        margin-right: 20px;
+        margin-left: 7.5%;
+      }
+  
+      .primera p {
+        margin: 0;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .primera button{
+        background-color: #3298E2;
+        border-radius: 5px;
+        padding: 15px 34px;
+        border: none;
+        border: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        display: block;
+        margin-top: 10px; /* Cambia este valor según tus preferencias */
+      }
+      .primera button:hover {
+        background-color: #2986c9;
+      }
+      .contenedor-imagenes {
+            display: flex;
+            justify-content: space-around; /* Ajusta el espacio entre las imágenes */
+            align-items: center; /* Alinea verticalmente las imágenes y el texto */
+            text-align: center; /* Alinea el texto debajo de cada imagen */
+        }
+
+        .contenedor-imagenes img {
+            width: 65%; /* Ajusta el ancho de las imágenes según tus necesidades */
+            max-width: 100%; /* Asegura que las imágenes no se salgan del contenedor */
+            height: auto; /* Mantiene la proporción original de las imágenes */
+            margin-bottom: 10px; /* Agrega un espacio entre las imágenes y el texto */
+        }
+      .segunda {
+        margin-top: 70px;
+      }
+      .segunda h2 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+      .segunda .contenedor-imagenes p {
+        font-size: 20px;
+
+      }
+    .tercera {
+      background-color: #D9D9D9;
+    }
+    .tercera .align {
+      display: flex;
+      align-items: center;
+    }
+    .tercera h2{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .tercera img {
+      width: 30%; /* Ajusta el tamaño de la imagen según tus necesidades */
+      float: left; /* Alinea la imagen a la izquierda */
+      margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+      margin-left: 50px;
+      margin-bottom: 30px;
+    }
+    
+    .tercera p {
+      flex: 1; /* Hace que el párrafo ocupe el espacio restante en la fila */
+      font-size: 20px;
+      margin-right: 50px;
+      
+    }
+    
+    form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+     }
+     
+     input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+     }
+     
+     input[type="submit"] {
+      background-color: #3298E2;
+      color: white;
+      padding: 14px 20px;
+      margin: 10px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+     }
+     
+     input[type="submit"]:hover {
+      background-color: #2b83c2;
+     }
+
+     footer {
+      background-color: #D9D9D9; /* Cambia el color de fondo según tus preferencias */
+      text-align: center;
+      padding: 40px; /* Ajusta el relleno según tus necesidades */
+      bottom: 0; /* Para fijar el pie de página en la parte inferior */
+    }
+    
+    footer p {
+      margin: 0; /* Elimina el margen predeterminado para el párrafo dentro del footer */
+      font-style: italic;
+    }
+    
+  </style>
+</head>
 <body>
-    <h1>Este es mi examen de unidad 3</h1>
-    <a href="{% url 'index'%}">Index</a>
+
+  <header>
+    <img src="{% static 'img/alter.png' %}" width="50%" height="auto">
+    <h1>SkillSwap</h1>
+    <nav> 
+      <a href="#1">Inicio</a>
+      <a href="#2">Que Buscamos</a>
+      <a href="#3">Nosotros</a>
+      <a href="#4">Contáctanos</a>
+    </nav>
+  </header>
+  
+  <section id="1" class="primera">
+    <img src="{% static 'img/skill.png' %}" alt="Descripción de la imagen" width="30%">
+    <p>Bienvenido a SkillSwap, la plataforma revolucionaria para intercambiar habilidades 
+
+    <br><br>
+    <button>Contactanos</button>
+    </p><br>
+
+  </section>  
+
+  <section id="2" class="segunda">
+    <center><h2>Que Buscamos</h2></center>
+    <br>
+    <br>
+    <div class="contenedor-imagenes">
+        <div>
+            <img src="{% static 'img/usuario.png' %}" alt="">
+            <p>En lugar de seguir las clases <br> tradicionales, nuestra aplicación te <br> permite crear un perfil detallado <br> de tus habilidades y conocimientos. </p>
+        </div>
+        <div>
+            <img src="{% static 'img/amigos.png' %}" alt="">
+            <p>Nos enfocamos en la creación de una <br> comunidad colaborativa y en la <br> promoción del intercambio de <br> conocimientos entre los usuarios.</p>
+        </div>
+        <div>
+            <img src="{% static 'img/change.png' %}" alt="">
+            <p>Contactar a otros usuarios para <br> coordinar intercambios <br> de habilidades en línea.</p>
+        </div>
+    </div> <br> <br> <br>
+  </section>
+  <br>
+
+  <section id="3" class="tercera"> 
+    <br><br>
+    <center><h2>Nosotros</h2></center>
+    <div class="align">
+    <img src="{% static 'img/reunion.png' %}" alt="" width="30%">
+    <p>¡Bienvenido a SkillSwap, el punto de encuentro de mentes creativas y aprendices apasionados! <br>
+      En SkillSwap, creemos en la transformación de la educación a través del intercambio colaborativo de habilidades. <br>
+      
+      Nos destacamos como una plataforma revolucionaria que va más allá de las
+      aulas tradicionales, ofreciéndote la oportunidad de aprender de una manera
+      única y personalizada. <br><br>
+    
+      <strong>Nuestra Filosofía</strong> <br> <br>
+
+      En lugar de seguir el camino convencional, te invitamos a construir tu propio camino de aprendizaje. 
+      SkillSwap te permite crear un perfil detallado de tus habilidades y conocimientos, uniendo a 
+      personas con destrezas complementarias de todo el mundo. Creemos en la diversidad de habilidades 
+      y experiencias, y en cómo cada individuo puede contribuir al crecimiento mutuo.
+      <br> <br> <br> <br>
+    </p>
+    </div>
+  </section>
+
+  <section id="4" class="cuarta">
+  <center><h2>Contactanos</h2></center>
+  <form>
+    <input type="text" name="nombre_completo" placeholder="Nombre Completo" required>
+    <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
+    <input type="text" name="asunto" placeholder="Asunto" required>
+    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+    <input type="submit" value="Enviar">
+   </form> <br> <br>
+  </section>
+
+  <footer>
+    <p>© 2023 SkillSwap</p>
+  </footer>
+  
 </body>
 </html>

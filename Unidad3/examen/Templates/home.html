@@ -192,7 +192,7 @@
     <p>Bienvenido a SkillSwap, la plataforma revolucionaria para intercambiar habilidades 
 
     <br><br>
-    <button>Contactanos</button>
+    <button><a href="#4">Contactanos</button></a>
     </p><br>
 
   </section>  
@@ -243,13 +243,24 @@
 
   <section id="4" class="cuarta">
   <center><h2>Contactanos</h2></center>
-  <form>
-    <input type="text" name="nombre_completo" placeholder="Nombre Completo" required>
-    <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
-    <input type="text" name="asunto" placeholder="Asunto" required>
-    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-    <input type="submit" value="Enviar">
-   </form> <br> <br>
+  <form method="post" action="{% url 'procesar_formulario' %}">
+    {% csrf_token %}
+
+    <label for="nombre_completo">Nombre Completo:</label>
+    <input type="text" id="nombre_completo" name="nombre_completo" required>
+
+    <label for="correo_electronico">Correo Electrónico:</label>
+    <input type="email" id="correo_electronico" name="correo_electronico" required>
+
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" name="asunto" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+    <button type="submit">Enviar Mensaje</button>
+  </br>
+</form>
   </section>
 
   <footer>

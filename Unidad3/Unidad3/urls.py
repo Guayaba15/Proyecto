@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('index', index, name='index'),   
+     path('procesar_formulario/', procesar_formulario, name='procesar_formulario'),
 ]
